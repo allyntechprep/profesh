@@ -1,0 +1,101 @@
+<div>
+  <div>
+    <h1>
+      Ai message #<%= @the_ai_message.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/ai_messages">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_ai_message/<%= @the_ai_message.id %>">
+          Delete ai message
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_ai_message.user_id %>
+      </dd>
+
+      <dt>
+        Content
+      </dt>
+      <dd>
+        <%= @the_ai_message.content %>
+      </dd>
+
+      <dt>
+        Role
+      </dt>
+      <dd>
+        <%= @the_ai_message.role %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_ai_message.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_ai_message.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit ai message
+    </h2>
+
+    <form action="/modify_ai_message/<%= @the_ai_message.id %>"  method="post" >
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_ai_message.user_id %>">
+      </div>
+
+      <div>
+        <label for="content_box">
+          Content
+        </label>
+
+        <input type="text" id="content_box" name="query_content" value="<%= @the_ai_message.content %>">
+      </div>
+
+      <div>
+        <label for="role_box">
+          Role
+        </label>
+
+        <input type="text" id="role_box" name="query_role" value="<%= @the_ai_message.role %>">
+      </div>
+
+      <button>
+        Update ai message
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

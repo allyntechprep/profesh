@@ -1,0 +1,48 @@
+<div >
+  <h5>
+    Edit User Account
+  </h5>
+
+  <div>
+    <form action="/modify_user" method="post">
+      <div>
+        <label for="email_box">Email</label>
+        <input id="email_box" name="query_email" value="<%= @current_user.email %>">
+      </div>
+      <div>
+        <label for="occupation_box">Occupation</label>
+        <input id="occupation_box" name="query_occupation" value="<%= @current_user.occupation %>">
+      </div>
+      <div>
+        <label for="bio_box">Bio</label>
+        <input id="bio_box" name="query_bio" value="<%= @current_user.bio %>">
+      </div>
+      <div>
+        <label for="display_name_box">Display name</label>
+        <input id="display_name_box" name="query_display_name" value="<%= @current_user.display_name %>">
+      </div>
+      <div>
+        <label for="employer_box">Employer</label>
+        <input id="employer_box" name="query_employer" value="<%= @current_user.employer %>">
+      </div>
+      <div>
+        <label for="aspiring_occupation_box">Aspiring occupation</label>
+        <input id="aspiring_occupation_box" name="query_aspiring_occupation" value="<%= @current_user.aspiring_occupation %>">
+      </div>
+
+      <div>
+        <label for="password_box">Password</label>
+        <input id="password_box" name="query_password" placeholder="Choose a password..." type="password">
+      </div>
+    
+      <div>
+        <label for="password_confirmation_box">Password Confirmation</label>
+        <input id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
+      </div>
+
+      <button>
+        Update account
+      </button>
+    </form>
+  </div>
+</div>

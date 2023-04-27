@@ -1,0 +1,118 @@
+<div>
+  <div>
+    <h1>
+      List of all ai messages
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new ai message
+    </h2>
+
+    <form action="/insert_ai_message" method="post">
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="content_box">
+          Content
+        </label>
+
+        <input type="text" id="content_box" name="query_content">
+      </div>
+
+      <div>
+        <label for="role_box">
+          Role
+        </label>
+
+        <input type="text" id="role_box" name="query_role">
+      </div>
+
+      <button>
+        Create ai message
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Content
+        </th>
+
+        <th>
+          Role
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_ai_messages.each do |an_ai_message| %>
+      <tr>
+        <td>
+          <%= an_ai_message.id %>
+        </td>
+
+        <td>
+          <%= an_ai_message.user_id %>
+        </td>
+
+        <td>
+          <%= an_ai_message.content %>
+        </td>
+
+        <td>
+          <%= an_ai_message.role %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(an_ai_message.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(an_ai_message.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/ai_messages/<%= an_ai_message.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
