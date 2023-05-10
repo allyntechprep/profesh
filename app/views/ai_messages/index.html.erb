@@ -15,31 +15,15 @@
     </h2>
 
     <form action="/insert_ai_message" method="post">
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id">
-      </div>
 
       <div>
-        <label for="content_box">
+        <label for="content_box" class="form-label">
           Content
         </label>
-
-        <input type="text" id="content_box" name="query_content">
+        <textarea rows="2" id="content_box" name="query_content" class="form-control"></textarea>
       </div>
 
-      <div>
-        <label for="role_box">
-          Role
-        </label>
-
-        <input type="text" id="role_box" name="query_role">
-      </div>
-
-      <button>
+      <button class="btn btn-outline-success my-2">
         Create ai message
       </button>
     </form>
