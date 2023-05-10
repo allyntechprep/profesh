@@ -11,4 +11,12 @@
 #
 class AiMessage < ApplicationRecord
   belongs_to(:user, { :required => true, :class_name => "User", :foreign_key => "user_id" })
+
+  enum role: {
+    :user => "user",
+    :system => "system",
+    :assistant => "assistant",
+  }
+
+  
 end
