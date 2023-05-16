@@ -22,12 +22,9 @@ class User < ApplicationRecord
 
   def prompt
     <<~TEXT
-      You are a business professional coaching #{display_name}. 
-      #{display_name} works at #{employer} as a #{occupation}.
-      #{display_name} hopes to one day become #{aspiring_occupation}.
-
-      #{display_name} is going to send you a piece of communication and 
-      I want you to translate it into something workplace apprropriate.
+      You are a business professional coach.
+      The user will provide a statement.
+      Please respond with a workplace appropriate version of that statement.
     TEXT
   end
 end

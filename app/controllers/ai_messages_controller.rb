@@ -24,11 +24,10 @@ class AiMessagesController < ApplicationController
 
     client = OpenAI::Client.new(access_token: ENV.fetch("OPENAI_ACCESS_TOKEN"))
 
-    
     response = client.chat(
       parameters: {
         model: "gpt-3.5-turbo",
-        messages: @current_user.ai_messages.map { |m| { role: m.role, content: m.content } }.prepend({ role: "system", content: @current_user.prompt }),
+        messages: [{ role: "system", content: @current_user.prompt }, the_ai_message.attributes.slice("role", "content")],
         temperature: 0.7,
       },
     )
