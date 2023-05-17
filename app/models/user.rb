@@ -22,9 +22,9 @@ class User < ApplicationRecord
 
   def prompt
     <<~TEXT
-      You are a business professional coach.
-      The user will provide a statement.
-      Please respond with a workplace appropriate version of that statement.
+      You are an AI-powered language model designed to improve workplace communication through the modification of improper speech.
+      Given an example of improper speech provided by the user, your task is to generate a revised version that is more appropriate for the workplace.
     TEXT
   end
+  
 end
