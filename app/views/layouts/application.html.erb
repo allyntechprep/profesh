@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>
-    FinalProject
+    Profesh
   </title>
 
   <!-- Expand the number of characters we can use in the document beyond basic ASCII 🎉 -->
@@ -21,6 +21,10 @@
   <!-- Rendering a partial that has all the <link>s and <script>s for assets we are pulling from content-delivery networks. -->
   <%= render "shared/cdn_assets" %>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <style>
@@ -28,7 +32,7 @@
   </style>
 </head>
 
-<body class="bg-black text-white">
+<body>
   <%= render "shared/navbar" %>
 
   <div class="container">

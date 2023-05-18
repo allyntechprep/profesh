@@ -1,38 +1,36 @@
-
+<div>
   <div>
+    <h1>
+      Message #<%= @the_ai_message.id %> details
+    </h1>
+
     <div>
-      <h1>
-        Message #<%= @the_ai_message.id %> details
-      </h1>
+      <div>
+        <a href="/ai_messages">
+          Go back
+        </a>
+      </div>
 
       <div>
-        <div>
-          <a href="/ai_messages">
-            Go back
-          </a>
-        </div>
-
-        <div>
-          <a href="/delete_ai_message/<%= @the_ai_message.id %>">
-            Delete Message
-          </a>
-        </div>
+        <a href="/delete_ai_message/<%= @the_ai_message.id %>">
+          Delete Message
+        </a>
       </div>
     </div>
   </div>
+</div>
 
-  <hr>
+<hr>
 
+<div class="card d-flex align-items-center w-75" >
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item d-flex align-items-">This s**t is crazy</li>
+    <li class="list-group-item">This situation is difficult/unexpected/unusual.</li>
 
-  <div class="card d-flex align-items-center" style="width: 18rem;">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item d-flex align-items-">This s**t is crazy</li>
-      <li class="list-group-item">This situation is difficult/unexpected/unusual.</li>
-
-    </ul>
-    <div class="card-footer">
-      <%= time_ago_in_words(@the_ai_message.updated_at) %> ago
-    </div>
+  </ul>
+  <div class="card-footer">
+    <%= time_ago_in_words(@the_ai_message.updated_at) %> ago
   </div>
+</div>
 
-  <hr>
+<hr>
