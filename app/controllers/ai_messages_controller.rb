@@ -6,12 +6,8 @@ class AiMessagesController < ApplicationController
   end
 
   def show
-    the_id = params.fetch("path_id")
-
-    matching_ai_messages = AiMessage.where({ :id => the_id })
-
-    @the_ai_message = matching_ai_messages.at(0)
-
+    @user_message = @current_user.ai_messages.find_by_id(params.fetch("path_id"))
+    @assistant_message = @current_user.ai_messages.where("id > ?", @user_message.id).order(:id).first
     render({ :template => "ai_messages/show.html.erb" })
   end
 
@@ -59,6 +55,7 @@ class AiMessagesController < ApplicationController
   end
 
   def destroy
+    # TODO: also delete the ai response
     the_id = params.fetch("path_id")
     the_ai_message = AiMessage.where({ :id => the_id }).at(0)
 
