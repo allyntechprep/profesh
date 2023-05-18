@@ -1,8 +1,6 @@
 class AiMessagesController < ApplicationController
   def index
-    matching_ai_messages = AiMessage.all
-
-    @list_of_ai_messages = matching_ai_messages.order({ :created_at => :desc })
+    @ai_messages = @current_user.ai_messages.where(role: "user").order({ :created_at => :desc })
 
     render({ :template => "ai_messages/index.html.erb" })
   end

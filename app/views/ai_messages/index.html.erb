@@ -1,96 +1,31 @@
-<div>
-  <div>
-    <h1>
-      List of all AI Messages
-    </h1>
-  </div>
-</div>
 
-<hr>
+<h1 class="sr-only">
+  List of all AI Messages
+</h1>
 
-<div>
-  <div>
-    <h2>
-      Add a new message
-    </h2>
 
-    <form action="/insert_ai_message" method="post">
-
-      <div>
-        <label for="content_box" class="form-label">
-          Content
-        </label>
-        <textarea rows="2" id="content_box" name="query_content" class="form-control"></textarea>
-      </div>
-
-      <button class="btn btn-outline-success my-2">
-        Create ai message
-      </button>
-    </form>
-  </div>
-</div>
+<%= render "ai_messages/form" %>
 
 <hr>
 <div>
   <div>
-    <table border="1">
+    <table class="table">
       <tr>
-        <th>
-          ID
+        <th class="text-nowrap">
+          Un-Profeshed Communication
         </th>
-
-        <th>
-          User
-        </th>
-
-        <th>
-          Content
-        </th>
-
-        <th>
-          Role
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
         <th>
         </th>
       </tr>
 
-      <% @list_of_ai_messages.each do |an_ai_message| %>
+      <% @ai_messages.each do |an_ai_message| %>
       <tr>
-        <td>
-          <%= an_ai_message.id %>
-        </td>
-
-        <td>
-          <%= an_ai_message.user_id %>
-        </td>
-
         <td>
           <%= an_ai_message.content %>
         </td>
-
-        <td>
-          <%= an_ai_message.role %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(an_ai_message.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(an_ai_message.updated_at) %> ago
-        </td>
-
-        <td>
+        <td class="text-nowrap">
           <a href="/ai_messages/<%= an_ai_message.id %>">
-            Show details
+            See more
           </a>
         </td>
       </tr>
