@@ -2,6 +2,7 @@ databases:
   - name: profesh
     databaseName: profesh
     user: profesh
+    plan: free
 
 services:
   - type: web
